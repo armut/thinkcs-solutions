@@ -19,10 +19,13 @@ for word in words:
     if not word == "":
         word_occurences[word] = word_occurences.get(word, 0) + 1
 
-print("Word\t\t\tCount")
-print("==============================")
+
+alice_words = open("alice_words.txt", "w")
+alice_words.write("Word\t\t\tCount\n")
+alice_words.write("==============================\n")
 for (u, v) in sorted(word_occurences.items()):
-    print("{0:25}{1}".format(u, v))
+    alice_words.write("{0:25}{1}\n".format(u, v))
+
 
 print("The word 'alice' occurs {0} times in the book.".format(word_occurences["alice"]))
 
